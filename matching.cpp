@@ -19,9 +19,7 @@
 
 using namespace std;
 
-const int PAIRS = 6;
-
-void init(char * filename, vector<Person> &ones, vector<Person> &tens) {
+void init(char * filename, vector<Person*> &ones, vector<Person*> &tens) {
 	int count = 0;
 	string line;
 	vector<string> file;
@@ -56,25 +54,42 @@ void init(char * filename, vector<Person> &ones, vector<Person> &tens) {
 		for(string each; getline(split, each, split_char); b.push_back(each));
 		
 		//create new Person object and add to array of people
+		//TODO
 	}
 }
 
-int freeMan(vector<Person> &ones) {
-	//if there is an available man whose queue isn't empty, return 1
+int freeMan(vector<Person*> &ones) {
+	//if there is an available man who doesn't have a match, return their index
+	//TODO
 	return -1;
 }
 
-int main(int argc, char **argv) {
-	vector<Person> ones(PAIRS);
-	vector<Person> tens(PAIRS);	
-	init(argv[1], ones, tens);
-	int i, j;
-	while((i = freeMan(ones)) != -1) {
-		Person partner = ones[i].getNext();
-		if(partner.getStatus() == Available) {
-			
-		} else {
+void engage(Person * p1, Person * p2) {
+	p1->updateStatus(Taken);
+	p1->updateMatch(p2);
+	p2->updateStatus(Taken);
+	p2->updateMatch(p1);
+}
 
+void freeMan(Person * p1) {
+	p1->updateStatus(Available);
+	p1->updateMatch(nullptr);
+}
+
+int main(int argc, char **argv) {
+	vector<Person*> ones(PAIRS);
+	vector<Person*> tens(PAIRS);	
+	init(argv[1], ones, tens);
+	int i;
+	while((i = freeMan(tens)) != -1) {
+		Person * partner = tens[i]->getNext();
+		if(partner->getStatus() == Available) {
+			engage(ones[i], partner);	
+		} else {
+			if(partner->prefers(tens[i], partner->getMatch())) {
+				freeMan(partner->getMatch());
+				engage(partner, tens[i]);
+			}
 		}
 	}
 	
