@@ -35,11 +35,11 @@ void init(char * filename, vector<Person*> &ones, vector<Person*> &tens) {
 			count++;
 		}
 	} else {
-		cout << "Invalid filename." << endl;
+		cout << "\tFile not found. Is it in the same directory?" << endl;
 		exit(1);
 	}
 	if(count % 2 != 0) {
-		cout << "Must be an even number of people in the list" << endl;
+		cout << "\tThere must be an even number of people in the list!" << endl;
 		exit(1);
 	}
 	
@@ -126,6 +126,12 @@ void printMatches(vector<Person*> &ones, vector<Person*> &tens) {
 }
 
 int main(int argc, char **argv) {
+	if(argc != 2) {
+		cout << "File must be input for program to run." << endl;
+		cout << "\tEx: ./Matching <filename.txt>" << endl;
+		exit(1);
+	}
+	
 	vector<Person*> ones(PAIRS);
 	vector<Person*> tens(PAIRS);	
 	init(argv[1], ones, tens);
