@@ -17,7 +17,7 @@
  * }
  */
 
-const int PAIRS = 4;
+const int PAIRS = 6;
 
 void init(char * filename, vector<Person*> &ones, vector<Person*> &tens) {
 	int count = 0;
@@ -135,18 +135,6 @@ int main(int argc, char **argv) {
 	vector<Person*> ones(PAIRS);
 	vector<Person*> tens(PAIRS);	
 	init(argv[1], ones, tens);
-	cout << "========== Preferences ==========" << endl;
-	for(int i = 0; i < PAIRS; i++) {
-		cout << ones[i]->getSelf() << ": ";
-		for(int j = 0; j < PAIRS; j++) {
-			cout << ones[i]->getNext()->getSelf();
-			if(j == PAIRS - 1)
-				cout << endl;
-			else
-				cout << ", ";
-		}
-	}
-	cout << endl;
 
 	int i;
 	while((i = freeMan(tens)) != -1) {
