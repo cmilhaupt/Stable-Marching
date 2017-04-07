@@ -3,9 +3,13 @@ This is an implementation of a solution to the Stable Matching from the general 
 
 Input file must be in the format:
 
-1,Person1,choice1,choice2,choiceN\n
-1,Person2,choice1,choice2,choiceN\n
-10,Person3,choice1,choice2,choiceN\n
-10,Person4,choice1,choice2,choiceN\n
+> 1,Person1,choice1,choice2,choiceN
+
+> 1,Person2,choice1,choice2,choiceN
+
+> 10,Person3,choice1,choice2,choiceN
+
+> 10,Person4,choice1,choice2,choiceN
+
 
 With a total of N choices for each person and 2N total lines.
