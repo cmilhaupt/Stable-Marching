@@ -46,13 +46,12 @@ void Person::updateMatch(Person * p) {
 }
 
 int Person::prefers(Person * p1, Person * p2) {
-	//TODO: double check this
 	int i = 0, j = 0;
 	for(int k = 0; k < PAIRS; k++) {
 		if(this->preferences[k] == p1)
 			i = k;
 		if(this->preferences[k] == p2)
-			i = j;
+			j = k;
 	}
 	return (i < j)?1:0;
 }
