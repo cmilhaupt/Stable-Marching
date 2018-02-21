@@ -18,6 +18,8 @@ Be sure to update the global constant, PAIRS, in matching.cpp before compiling.
 -----------------------------------------------------------------------------------------------------------------------------------
 After cloning and compiling, run
 > make
+
 in the same directory, then
 > ./Matching <filename>
+  
 where <filename> is a text file that follows the specifications above.
