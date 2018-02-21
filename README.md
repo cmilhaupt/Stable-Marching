@@ -20,6 +20,6 @@ After cloning and compiling, run
 > make
 
 in the same directory, then
-> "./Matching <filename>"
+> ./Matching filename
   
 where <filename> is a text file that follows the specifications above.
