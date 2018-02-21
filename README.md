@@ -14,8 +14,10 @@ Input file must be in the format:
 
 With a total of N choices for each person and 2N total lines.
 
-Be sure to update the global constant, PAIRS, in matching.cpp before compiling.
+Program Execution
 -----------------------------------------------------------------------------------------------------------------------------------
+Be sure to update the global constant, PAIRS, in matching.cpp before compiling.
+
 After cloning and compiling, run
 > make
 
