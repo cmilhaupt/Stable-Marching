@@ -22,4 +22,4 @@ After cloning and compiling, run
 in the same directory, then
 > ./Matching filename
   
-where <filename> is a text file that follows the specifications above.
+where filename is a text file that follows the specifications above.
